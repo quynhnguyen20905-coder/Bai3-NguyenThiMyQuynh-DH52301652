@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tất Cả Sản Phẩm – AURA SHOES</title>
+  <meta name="description" content="Khám phá toàn bộ bộ sưu tập giày cao cấp của AURA SHOES. Lọc theo danh mục, size, màu sắc và khoảng giá." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/products.css" />
+</head>
+<body class="page-products">
+
+  <!-- NAVBAR -->
+  <header class="navbar scrolled" id="navbar">
+    <div class="navbar__inner">
+      <a href="./index.html" class="navbar__logo">
+        <span class="logo-aura" style="color:var(--clr-dark)">AURA</span><span class="logo-shoes">SHOES</span>
+      </a>
+
+      <nav class="navbar__nav" id="navMenu">
+        <a href="./index.html" class="nav-link">Trang chủ</a>
+        <a href="./products.html" class="nav-link active">Sản phẩm</a>
+        <a href="#" class="nav-link">Bộ Sưu tập</a>
+        <a href="#" class="nav-link">Liên hệ</a>
+      </nav>
+      <div class="navbar__actions">
+        <div class="search-box">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" placeholder="Tìm kiếm sản phẩm..." id="searchInput" />
+        </div>
+        <button class="cart-btn" aria-label="Giỏ hàng">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-count">2</span>
+        </button>
+        <button class="wishlist-btn" aria-label="Yêu thích">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="./index.html">Trang chủ</a>
+        <span class="bc-sep">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </span>
+        <span class="bc-current">Tất cả sản phẩm</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="container">
+      <div class="ph__left">
+        <h1 class="ph__title">Tất Cả Sản Phẩm</h1>
+      </div>
+      <div class="ph__right">
+        <span class="ph__count" id="productCount">124 sản phẩm</span>
+        <div class="sort-wrap">
+          <label for="sortSelect" class="sr-only">Sắp xếp</label>
+          <select id="sortSelect" class="sort-select">
+            <option value="newest">Mới nhất</option>
+            <option value="price-asc">Giá thấp → cao</option>
+            <option value="price-desc">Giá cao → thấp</option>
+            <option value="popular">Phổ biến nhất</option>
+          </select>
+          <svg class="sort-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="view-toggle">
+          <button class="view-btn active" id="viewGrid" title="Lưới 3 cột">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          </button>
+          <button class="view-btn" id="viewList" title="Danh sách">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main class="shop-layout">
+    <div class="container">
+      <div class="shop-inner">
+
+        <!-- SIDEBAR FILTER -->
+        <aside class="filter-sidebar" id="filterSidebar">
+          <div class="filter-sidebar__header">
+            <h2>Bộ Lọc</h2>
+            <button class="filter-reset" id="filterReset">Xóa tất cả</button>
+          </div>
+
+          <!-- Category -->
+          <div class="filter-group">
+            <button class="filter-group__toggle" aria-expanded="true">
+              <span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h7"/></svg>
+                Danh mục
+              </span>
+              <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+            </button>
+            <div class="filter-group__body open">
+              <label class="check-item"><input type="checkbox" name="cat" value="heels" /><span class="checkmark"></span>Giày Cao Gót<em>24</em></label>
+              <label class="check-item"><input type="checkbox" name="cat" value="sandal" checked /><span class="checkmark"></span>Giày Sandal<em>19</em></label>
+              <label class="check-item"><input type="checkbox" name="cat" value="flat" /><span class="checkmark"></span>Giày Búp Bê<em>31</em></label>
+              <label class="check-item"><input type="checkbox" name="cat" value="sneaker" /><span class="checkmark"></span>Sneakers Nữ<em>18</em></label>
+              <label class="check-item"><input type="checkbox" name="cat" value="boots" /><span class="checkmark"></span>Giày Boots<em>15</em></label>
+              <label class="check-item"><input type="checkbox" name="cat" value="loafers" /><span class="checkmark"></span>Giày Loafers<em>17</em></label>
+            </div>
+          </div>
+
+          <!-- Size -->
+          <div class="filter-group">
+            <button class="filter-group__toggle" aria-expanded="true">
+              <span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+                Kích cỡ
+              </span>
+              <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+            </button>
+            <div class="filter-group__body open">
+              <div class="size-grid">
+                <button class="size-btn">35</button>
+                <button class="size-btn active">36</button>
+                <button class="size-btn">37</button>
+                <button class="size-btn">38</button>
+                <button class="size-btn">39</button>
+                <button class="size-btn">40</button>
+                <button class="size-btn">41</button>
+                <button class="size-btn disabled" disabled>42</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Color -->
+          <div class="filter-group">
+            <button class="filter-group__toggle" aria-expanded="true">
+              <span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 010 20"/></svg>
+                Màu sắc
+              </span>
+              <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+            </button>
+            <div class="filter-group__body open">
+              <div class="color-grid">
+                <button class="color-btn active" style="--c:#1A1410" title="Đen" aria-label="Đen"></button>
+                <button class="color-btn" style="--c:#C84B31" title="Đỏ" aria-label="Đỏ"></button>
+                <button class="color-btn" style="--c:#C4956A" title="Be" aria-label="Be"></button>
+                <button class="color-btn" style="--c:#E8E2DC" title="Kem" aria-label="Kem"></button>
+                <button class="color-btn" style="--c:#B8C4D4" title="Xanh nhạt" aria-label="Xanh nhạt"></button>
+                <button class="color-btn" style="--c:#8B5E3C" title="Nâu" aria-label="Nâu"></button>
+                <button class="color-btn" style="--c:#D4A843" title="Vàng gold" aria-label="Vàng gold"></button>
+                <button class="color-btn" style="--c:#F5EDE4" title="Hồng nhạt" aria-label="Hồng nhạt"></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Price range -->
+          <div class="filter-group">
+            <button class="filter-group__toggle" aria-expanded="true">
+              <span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+                Khoảng giá
+              </span>
+              <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+            </button>
+            <div class="filter-group__body open">
+              <div class="price-range">
+                <div class="price-labels">
+                  <span id="priceMin">500.000đ</span>
+                  <span id="priceMax">2.000.000đ</span>
+                </div>
+                <div class="range-track">
+                  <div class="range-fill" id="rangeFill"></div>
+                  <input type="range" min="0" max="5000000" value="500000" step="100000" class="range-slider" id="sliderMin" />
+                  <input type="range" min="0" max="5000000" value="2000000" step="100000" class="range-slider" id="sliderMax" />
+                </div>
+              </div>
+              <button class="apply-btn" id="applyFilter">Áp dụng bộ lọc</button>
+            </div>
+          </div>
+
+          <!-- Rating -->
+          <div class="filter-group">
+            <button class="filter-group__toggle" aria-expanded="true">
+              <span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                Đánh giá
+              </span>
+              <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+            </button>
+            <div class="filter-group__body open">
+              <label class="check-item rating-item"><input type="radio" name="rating" value="5" /><span class="checkmark"></span><span class="stars">★★★★★</span><em>128</em></label>
+              <label class="check-item rating-item"><input type="radio" name="rating" value="4" /><span class="checkmark"></span><span class="stars">★★★★☆</span><em>96</em></label>
+              <label class="check-item rating-item"><input type="radio" name="rating" value="3" /><span class="checkmark"></span><span class="stars">★★★☆☆</span><em>44</em></label>
+            </div>
+          </div>
+
+          <!-- Mobile apply -->
+          <button class="apply-btn mobile-apply" id="mobileApply">Xem kết quả</button>
+        </aside>
+
+        <!-- PRODUCT GRID -->
+        <section class="product-section">
+
+          <!-- Active filters -->
+          <div class="active-filters" id="activeFilters">
+            <span class="af-label">Đang lọc:</span>
+            <div class="af-tags">
+              <span class="af-tag">Giày Sandal <button class="af-remove">×</button></span>
+              <span class="af-tag">Size 36 <button class="af-remove">×</button></span>
+              <span class="af-tag">Màu Đen <button class="af-remove">×</button></span>
+            </div>
+          </div>
+
+          <div class="prod-grid" id="prodGrid">
+
+            <!-- Product 1 -->
+            <article class="pcard">
+              <div class="pcard__img-wrap">
+                <img src="./images/v6_237.png" alt="Aura Stiletto Beige" />
+
+                <div class="pcard__actions">
+                  <button class="pca-btn" title="Yêu thích">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                  </button>
+                  <button class="pca-btn" title="Xem nhanh">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                  </button>
+                </div>
+                <div class="pcard__badges">
+                  <span class="badge badge--new">MỚI</span>
+                </div>
+                <button class="pcard__add-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Thêm vào giỏ
+                </button>
+              </div>
+              <div class="pcard__body">
+                <p class="pcard__cat">Giày cao gót</p>
+                <h3 class="pcard__name"><a href="#">Aura Stiletto Beige</a></h3>
+                <p class="pcard__desc">Giày cao gót thanh lịch</p>
+                <div class="pcard__rating"><span class="stars-gold">★★★★★</span><span class="r-count">(84)</span></div>
+                <div class="pcard__prices">
+                  <span class="p-new">1.250.000đ</span>
+                  <span class="p-old">1.500.000đ</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Product 2 -->
+            <article class="pcard">
+              <div class="pcard__img-wrap" style="background:#111;">
+                <img src="./images/v6_252.png" alt="Midnight Sandal" />
+
+                <div class="pcard__actions">
+                  <button class="pca-btn" title="Yêu thích"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
+                  <button class="pca-btn" title="Xem nhanh"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                </div>
+                <button class="pcard__add-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Thêm vào giỏ
+                </button>
+              </div>
+              <div class="pcard__body">
+                <p class="pcard__cat">Giày Sandal</p>
+                <h3 class="pcard__name"><a href="#">Midnight Sandal</a></h3>
+                <p class="pcard__desc">Sandal quai mảnh cao cấp</p>
+                <div class="pcard__rating"><span class="stars-gold">★★★★☆</span><span class="r-count">(62)</span></div>
+                <div class="pcard__prices">
+                  <span class="p-new">890.000đ</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Product 3 -->
+            <article class="pcard">
+              <div class="pcard__img-wrap" style="background:#f5e8e0;">
+                <img src="./images/v6_247.png" alt="Aura Cloud Sneaker" />
+
+                <div class="pcard__actions">
+                  <button class="pca-btn" title="Yêu thích"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
+                  <button class="pca-btn" title="Xem nhanh"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                </div>
+                <button class="pcard__add-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Thêm vào giỏ
+                </button>
+              </div>
+              <div class="pcard__body">
+                <p class="pcard__cat">Sneakers Nữ</p>
+                <h3 class="pcard__name"><a href="#">Aura Cloud Sneaker</a></h3>
+                <p class="pcard__desc">Giày thể thao êm ái</p>
+                <div class="pcard__rating"><span class="stars-gold">★★★★★</span><span class="r-count">(117)</span></div>
+                <div class="pcard__prices">
+                  <span class="p-new">1.100.000đ</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Product 4 -->
+            <article class="pcard">
+              <div class="pcard__img-wrap">
+                <img src="./images/v6_265.png" alt="Ruby Glam Heels" />
+
+                <div class="pcard__actions">
+                  <button class="pca-btn" title="Yêu thích"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
+                  <button class="pca-btn" title="Xem nhanh"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                </div>
+                <div class="pcard__badges">
+                  <span class="badge badge--hot">BÁN CHẠY</span>
+                </div>
+                <button class="pcard__add-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Thêm vào giỏ
+                </button>
+              </div>
+              <div class="pcard__body">
+                <p class="pcard__cat">Giày cao gót</p>
+                <h3 class="pcard__name"><a href="#">Ruby Glam Heels</a></h3>
+                <p class="pcard__desc">Giày cao gót đỏ quyến rũ</p>
+                <div class="pcard__rating"><span class="stars-gold">★★★★★</span><span class="r-count">(203)</span></div>
+                <div class="pcard__prices">
+                  <span class="p-new">1.450.000đ</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Product 5 -->
+            <article class="pcard">
+              <div class="pcard__img-wrap" style="background:#f7f5f2;">
+                <img src="./images/v6_277.png" alt="Essential White Flat" />
+
+                <div class="pcard__actions">
+                  <button class="pca-btn" title="Yêu thích"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
+                  <button class="pca-btn" title="Xem nhanh"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                </div>
+                <button class="pcard__add-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Thêm vào giỏ
+                </button>
+              </div>
+              <div class="pcard__body">
+                <p class="pcard__cat">Giày Búp Bê</p>
+                <h3 class="pcard__name"><a href="#">Essential White Flat</a></h3>
+                <p class="pcard__desc">Giày búp bê tối giản</p>
+                <div class="pcard__rating"><span class="stars-gold">★★★★☆</span><span class="r-count">(71)</span></div>
+                <div class="pcard__prices">
+                  <span class="p-new">650.000đ</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Product 6 -->
+            <article class="pcard">
+              <div class="pcard__img-wrap">
+                <img src="./images/v6_289.png" alt="Golden Night Sandal" />
+
+                <div class="pcard__actions">
+                  <button class="pca-btn" title="Yêu thích"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
+                  <button class="pca-btn" title="Xem nhanh"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                </div>
+                <div class="pcard__badges">
+                  <span class="badge badge--sale">-20%</span>
+                </div>
+                <button class="pcard__add-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Thêm vào giỏ
+                </button>
+              </div>
+              <div class="pcard__body">
+                <p class="pcard__cat">Giày Sandal</p>
+                <h3 class="pcard__name"><a href="#">Golden Night Sandal</a></h3>
+                <p class="pcard__desc">Sandal dự tiệc cao cấp</p>
+                <div class="pcard__rating"><span class="stars-gold">★★★★★</span><span class="r-count">(55)</span></div>
+                <div class="pcard__prices">
+                  <span class="p-new">1.040.000đ</span>
+                  <span class="p-old">1.300.000đ</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Product 7 -->
+            <article class="pcard">
+              <div class="pcard__img-wrap">
+                <img src="./images/v6_301.png" alt="Storm Ankle Boot" loading="lazy" />
+                <div class="pcard__actions">
+                  <button class="pca-btn" title="Yêu thích"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
+                  <button class="pca-btn" title="Xem nhanh"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                </div>
+                <button class="pcard__add-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Thêm vào giỏ
+                </button>
+              </div>
+              <div class="pcard__body">
+                <p class="pcard__cat">Giày Boots</p>
+                <h3 class="pcard__name"><a href="#">Storm Ankle Boot</a></h3>
+                <p class="pcard__desc">Boot cổ ngắn cá tính</p>
+                <div class="pcard__rating"><span class="stars-gold">★★★★☆</span><span class="r-count">(38)</span></div>
+                <div class="pcard__prices">
+                  <span class="p-new">2.200.000đ</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Product 8 -->
+            <article class="pcard">
+              <div class="pcard__img-wrap" style="background:#f2ede8;">
+                <img src="./images/v6_242.png" alt="Blossom Sneaker" loading="lazy" />
+                <div class="pcard__actions">
+                  <button class="pca-btn" title="Yêu thích"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
+                  <button class="pca-btn" title="Xem nhanh"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                </div>
+                <div class="pcard__badges">
+                  <span class="badge badge--new">MỚI</span>
+                </div>
+                <button class="pcard__add-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Thêm vào giỏ
+                </button>
+              </div>
+              <div class="pcard__body">
+                <p class="pcard__cat">Sneakers Nữ</p>
+                <h3 class="pcard__name"><a href="#">Blossom Sneaker</a></h3>
+                <p class="pcard__desc">Sneaker phối màu hồng pastel</p>
+                <div class="pcard__rating"><span class="stars-gold">★★★★★</span><span class="r-count">(92)</span></div>
+                <div class="pcard__prices">
+                  <span class="p-new">980.000đ</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Product 9 -->
+            <article class="pcard">
+              <div class="pcard__img-wrap">
+                <img src="./images/v6_237.png" alt="Velvet Heel Mule" loading="lazy" />
+                <div class="pcard__actions">
+                  <button class="pca-btn" title="Yêu thích"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
+                  <button class="pca-btn" title="Xem nhanh"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                </div>
+                <button class="pcard__add-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Thêm vào giỏ
+                </button>
+              </div>
+              <div class="pcard__body">
+                <p class="pcard__cat">Giày Sandal</p>
+                <h3 class="pcard__name"><a href="#">Velvet Heel Mule</a></h3>
+                <p class="pcard__desc">Mule gót block sang trọng</p>
+                <div class="pcard__rating"><span class="stars-gold">★★★★☆</span><span class="r-count">(47)</span></div>
+                <div class="pcard__prices">
+                  <span class="p-new">1.350.000đ</span>
+                  <span class="p-old">1.600.000đ</span>
+                </div>
+              </div>
+            </article>
+
+          </div><!-- /prod-grid -->
+
+          <!-- PAGINATION -->
+          <nav class="pagination" aria-label="Phân trang">
+            <button class="pg-btn pg-prev" disabled aria-label="Trang trước">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <button class="pg-btn active">1</button>
+            <button class="pg-btn">2</button>
+            <button class="pg-btn">3</button>
+            <span class="pg-ellipsis">…</span>
+            <button class="pg-btn">14</button>
+            <button class="pg-btn pg-next" aria-label="Trang tiếp">
+              Tiếp theo
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </nav>
+
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- MOBILE FILTER BUTTON -->
+  <button class="filter-fab" id="filterFab">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="20" y2="12"/><line x1="12" y1="18" x2="20" y2="18"/><circle cx="4" cy="6" r="2" fill="currentColor"/><circle cx="8" cy="12" r="2" fill="currentColor"/><circle cx="12" cy="18" r="2" fill="currentColor"/></svg>
+    Bộ lọc
+  </button>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="./index.html" class="navbar__logo footer-logo">
+          <span class="logo-aura">AURA</span><span class="logo-shoes">SHOES</span>
+        </a>
+        <p>Nâng tầm bước chân phái đẹp với những thiết kế tinh tế và đẳng cấp nhất. Trải nghiệm sự khác biệt từ chất liệu đến kiểu dáng.</p>
+        <div class="footer__socials">
+          <a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" class="social-link" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.12a8.16 8.16 0 004.77 1.52V7.21a4.85 4.85 0 01-1-.52z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Khám Phá</h4>
+        <ul>
+          <li><a href="#">Tất cả sản phẩm</a></li>
+          <li><a href="#">Hàng mới về</a></li>
+          <li><a href="#">Bán chạy nhất</a></li>
+          <li><a href="#">Khuyến mãi</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Hỗ Trợ</h4>
+        <ul>
+          <li><a href="#">Hướng dẫn chọn size</a></li>
+          <li><a href="#">Chính sách đổi trả</a></li>
+          <li><a href="#">Hệ thống cửa hàng</a></li>
+          <li><a href="#">Câu hỏi thường gặp</a></li>
+        </ul>
+      </div>
+      <div class="footer__col footer__newsletter">
+        <h4>Đăng Ký Nhận Tin</h4>
+        <p>Nhận thông báo về bộ sưu tập mới nhất và ưu đãi độc quyền.</p>
+        <form class="footer-nl-form">
+          <input type="email" placeholder="Email của bạn" />
+          <button type="submit">Gửi</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2024 AURA SHOES. All rights reserved.</p>
+      <div class="footer__bottom-links">
+        <a href="#">Chính sách bảo mật</a>
+        <a href="#">Điều khoản</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+    Đã thêm vào giỏ hàng!
+  </div>
+
+  <script>
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 40));
+
+    // Hamburger
+    const hamburger = document.getElementById('hamburger');
+    const navMenu   = document.getElementById('navMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navMenu.classList.toggle('open');
+    });
+
+    // Filter group toggles
+    document.querySelectorAll('.filter-group__toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const body = btn.nextElementSibling;
+        const open = body.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open);
+      });
+    });
+
+    // Size buttons
+    document.querySelectorAll('.size-btn:not(.disabled)').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+
+    // Color buttons
+    document.querySelectorAll('.color-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.color-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+
+    // Price range slider
+    const sMin = document.getElementById('sliderMin');
+    const sMax = document.getElementById('sliderMax');
+    const pMin = document.getElementById('priceMin');
+    const pMax = document.getElementById('priceMax');
+    const fill = document.getElementById('rangeFill');
+
+    function fmt(v){ return Number(v).toLocaleString('vi-VN')+'đ'; }
+    function updateRange(){
+      let lo = Math.min(sMin.value, sMax.value);
+      let hi = Math.max(sMin.value, sMax.value);
+      pMin.textContent = fmt(lo);
+      pMax.textContent = fmt(hi);
+      const max = sMin.max;
+      fill.style.left  = (lo/max*100)+'%';
+      fill.style.right = (100 - hi/max*100)+'%';
+    }
+    sMin.addEventListener('input', updateRange);
+    sMax.addEventListener('input', updateRange);
+    updateRange();
+
+    // View toggle
+    const grid = document.getElementById('prodGrid');
+    document.getElementById('viewGrid').addEventListener('click', function(){
+      this.classList.add('active');
+      document.getElementById('viewList').classList.remove('active');
+      grid.classList.remove('list-view');
+    });
+    document.getElementById('viewList').addEventListener('click', function(){
+      this.classList.add('active');
+      document.getElementById('viewGrid').classList.remove('active');
+      grid.classList.add('list-view');
+    });
+
+    // Pagination
+    document.querySelectorAll('.pg-btn:not(.pg-prev):not(.pg-next)').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.pg-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+
+    // Add to cart toast
+    function showToast(){
+      const t = document.getElementById('toast');
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2500);
+    }
+    document.querySelectorAll('.pcard__add-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        showToast();
+        const cc = document.querySelector('.cart-count');
+        cc.textContent = parseInt(cc.textContent)+1;
+        cc.classList.add('bounce');
+        setTimeout(() => cc.classList.remove('bounce'), 400);
+      });
+    });
+
+    // Remove active filter tags
+    document.querySelectorAll('.af-remove').forEach(btn => {
+      btn.addEventListener('click', () => btn.parentElement.remove());
+    });
+
+    // Mobile filter fab
+    const sidebar = document.getElementById('filterSidebar');
+    document.getElementById('filterFab').addEventListener('click', () => {
+      sidebar.classList.toggle('mobile-open');
+    });
+
+    // Filter reset
+    document.getElementById('filterReset').addEventListener('click', () => {
+      document.querySelectorAll('.check-item input').forEach(i => i.checked = false);
+      document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.color-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('activeFilters').querySelectorAll('.af-tag').forEach(t => t.remove());
+    });
+
+    // Scroll reveal
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if(e.isIntersecting){
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.01 });
+
+
+    document.querySelectorAll('.pcard').forEach(c => io.observe(c));
+
+    // Apply filter button feedback
+    document.getElementById('applyFilter').addEventListener('click', function(){
+      this.textContent = '✓ Đã áp dụng!';
+      setTimeout(() => this.textContent = 'Áp dụng bộ lọc', 1800);
+    });
+  </script>
+</body>
+</html>

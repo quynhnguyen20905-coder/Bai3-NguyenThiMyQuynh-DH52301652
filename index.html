@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AURA SHOES – Bước Đi Đầy Kiêu Hãnh</title>
+  <meta name="description" content="AURA SHOES – Thương hiệu giày cao cấp dành cho người phụ nữ hiện đại. Khám phá bộ sưu tập giày tinh tế, sang trọng nhất mùa này." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="#" class="navbar__logo">
+        <span class="logo-aura">AURA</span><span class="logo-shoes">SHOES</span>
+      </a>
+
+      <nav class="navbar__nav" id="navMenu">
+        <a href="#" class="nav-link active">Trang chủ</a>
+        <a href="#categories" class="nav-link">Sản phẩm</a>
+        <a href="#bestseller" class="nav-link">Bộ sưu tập</a>
+        <a href="#footer" class="nav-link">Liên hệ</a>
+      </nav>
+
+      <div class="navbar__actions">
+        <div class="search-box">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" placeholder="Tìm kiếm..." id="searchInput" />
+        </div>
+        <button class="cart-btn" id="cartBtn" aria-label="Giỏ hàng">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-count">2</span>
+        </button>
+        <button class="wishlist-btn" aria-label="Yêu thích">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <img src="./images/v6_216.png" alt="Hero model wearing AURA SHOES" class="hero__img" />
+      <div class="hero__overlay"></div>
+    </div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">Premium Footwear Collection</p>
+      <h1 class="hero__title">
+        Bước Đi Đầy<br />
+        <em>Kiêu Hãnh</em>
+      </h1>
+      <p class="hero__sub">Tinh tế trong từng đường chỉ, sang trọng trong mỗi bước chân</p>
+      <div class="hero__cta-group">
+        <a href="#categories" class="btn btn--primary">Khám Phá Ngay</a>
+        <a href="#bestseller" class="btn btn--ghost">Sản Phẩm Hot</a>
+      </div>
+    </div>
+    <div class="hero__scroll-hint">
+      <span>Cuộn xuống</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== MARQUEE STRIP ===== -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>Giày Cao Gót</span><span class="dot">✦</span>
+      <span>Sneaker Nữ</span><span class="dot">✦</span>
+      <span>Giày Búp Bê</span><span class="dot">✦</span>
+      <span>Ankle Boots</span><span class="dot">✦</span>
+      <span>Miễn Phí Vận Chuyển</span><span class="dot">✦</span>
+      <span>Đổi Trả 30 Ngày</span><span class="dot">✦</span>
+      <span>Giày Cao Gót</span><span class="dot">✦</span>
+      <span>Sneaker Nữ</span><span class="dot">✦</span>
+      <span>Giày Búp Bê</span><span class="dot">✦</span>
+      <span>Ankle Boots</span><span class="dot">✦</span>
+      <span>Miễn Phí Vận Chuyển</span><span class="dot">✦</span>
+      <span>Đổi Trả 30 Ngày</span><span class="dot">✦</span>
+    </div>
+  </div>
+
+  <!-- ===== CATEGORIES ===== -->
+  <section class="categories section" id="categories">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <p class="section-label">Danh Mục</p>
+          <h2 class="section-title">Danh Mục Nổi Bật</h2>
+          <p class="section-subtitle">Tuyển tập những thiết kế tinh tế nhất cho mùa này</p>
+        </div>
+        <a href="./products.html" class="link-more">Xem tất cả <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+
+      <div class="cat-grid">
+        <div class="cat-card" style="--delay:0s">
+          <div class="cat-card__img-wrap">
+            <img src="./images/v6_237.png" alt="Giày cao gót" loading="lazy" />
+            <div class="cat-card__overlay"></div>
+          </div>
+          <div class="cat-card__body">
+            <h3>Giày Cao Gót</h3>
+            <span class="cat-count">24 sản phẩm</span>
+          </div>
+        </div>
+
+        <div class="cat-card" style="--delay:.1s">
+          <div class="cat-card__img-wrap">
+            <img src="./images/v6_242.png" alt="Giày Sneaker nữ" loading="lazy" />
+            <div class="cat-card__overlay"></div>
+          </div>
+          <div class="cat-card__body">
+            <h3>Giày Sneaker Nữ</h3>
+            <span class="cat-count">18 sản phẩm</span>
+          </div>
+        </div>
+
+        <div class="cat-card" style="--delay:.2s">
+          <div class="cat-card__img-wrap">
+            <img src="./images/v6_247.png" alt="Giày búp bê" loading="lazy" />
+            <div class="cat-card__overlay"></div>
+          </div>
+          <div class="cat-card__body">
+            <h3>Giày Búp Bê</h3>
+            <span class="cat-count">31 sản phẩm</span>
+          </div>
+        </div>
+
+        <div class="cat-card" style="--delay:.3s">
+          <div class="cat-card__img-wrap">
+            <img src="./images/v6_252.png" alt="Giày Boots" loading="lazy" />
+            <div class="cat-card__overlay"></div>
+          </div>
+          <div class="cat-card__body">
+            <h3>Giày Boots</h3>
+            <span class="cat-count">15 sản phẩm</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BESTSELLER ===== -->
+  <section class="bestseller section" id="bestseller">
+    <div class="container">
+      <div class="section-header centered">
+        <div>
+          <p class="section-label">Bán Chạy</p>
+          <h2 class="section-title">Sản Phẩm Bán Chạy</h2>
+          <p class="section-subtitle">Những lựa chọn được yêu thích nhất của mùa này</p>
+        </div>
+      </div>
+
+      <div class="products-grid">
+
+        <div class="product-card" style="--delay:0s">
+          <div class="product-card__img-wrap">
+            <img src="./images/v6_265.png" alt="Rosé Stiletto" loading="lazy" />
+            <div class="product-card__badges">
+              <span class="badge badge--hot">HOT</span>
+            </div>
+            <button class="product-card__quick-add" id="quickAdd1">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Thêm vào giỏ
+            </button>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Rosé Stiletto</h3>
+            <div class="product-card__rating">
+              ★★★★★ <span>(128)</span>
+            </div>
+            <div class="product-card__price-row">
+              <span class="price-current">2.450.000đ</span>
+              <span class="price-old">2.900.000đ</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" style="--delay:.1s">
+          <div class="product-card__img-wrap">
+            <img src="./images/v6_277.png" alt="Cloud Walker Sneaker" loading="lazy" />
+            <div class="product-card__badges">
+              <span class="badge badge--new">MỚI</span>
+            </div>
+            <button class="product-card__quick-add" id="quickAdd2">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Thêm vào giỏ
+            </button>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Cloud Walker Sneaker</h3>
+            <div class="product-card__rating">
+              ★★★★☆ <span>(96)</span>
+            </div>
+            <div class="product-card__price-row">
+              <span class="price-current">1.890.000đ</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" style="--delay:.2s">
+          <div class="product-card__img-wrap">
+            <img src="./images/v6_289.png" alt="Classic Muse Flat" loading="lazy" />
+            <div class="product-card__badges">
+              <span class="badge badge--sale">-15%</span>
+            </div>
+            <button class="product-card__quick-add" id="quickAdd3">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Thêm vào giỏ
+            </button>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Classic Muse Flat</h3>
+            <div class="product-card__rating">
+              ★★★★★ <span>(74)</span>
+            </div>
+            <div class="product-card__price-row">
+              <span class="price-current">1.250.000đ</span>
+              <span class="price-old">1.490.000đ</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" style="--delay:.3s">
+          <div class="product-card__img-wrap">
+            <img src="./images/v6_301.png" alt="Midnight Ankle Boot" loading="lazy" />
+            <button class="product-card__quick-add" id="quickAdd4">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Thêm vào giỏ
+            </button>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Midnight Ankle Boot</h3>
+            <div class="product-card__rating">
+              ★★★★☆ <span>(51)</span>
+            </div>
+            <div class="product-card__price-row">
+              <span class="price-current">3.100.000đ</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BRAND STATEMENT ===== -->
+  <section class="brand-statement section">
+    <div class="bs__inner">
+      <div class="bs__text">
+        <p class="section-label">Câu Chuyện Thương Hiệu</p>
+        <h2 class="bs__title">Đẳng cấp trong<br /><em>từng bước chân</em></h2>
+        <p class="bs__desc">Tại AURA SHOES, chúng tôi tin rằng đôi giày không chỉ là phụ kiện, mà là tuyên ngôn của sự tự tin. Mỗi thiết kế đều được chế tác thủ công tỉ mỉ để tôn vinh vẻ đẹp kiêu sa của người phụ nữ hiện đại.</p>
+
+        <div class="bs__features">
+          <div class="feature-item">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <h4>Chất liệu cao cấp</h4>
+              <p>Da thật nhập khẩu, bền bỉ và mềm mại theo thời gian</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </div>
+            <div>
+              <h4>Giao hàng miễn phí</h4>
+              <p>Miễn phí giao hàng toàn quốc cho đơn trên 500.000đ</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            </div>
+            <div>
+              <h4>Tư vấn tận tâm</h4>
+              <p>Đội ngũ tư vấn viên chuyên nghiệp hỗ trợ 24/7</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bs__visual">
+        <div class="bs__img-stack">
+          <div class="bs__img-main">
+            <img src="./images/v6_252.png" alt="AURA SHOES premium design" />
+          </div>
+          <div class="bs__img-accent">
+            <img src="./images/v6_265.png" alt="AURA SHOES detail" />
+          </div>
+          <div class="bs__stat">
+            <span class="stat-number">5K+</span>
+            <span class="stat-label">Khách hàng hài lòng</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials section">
+    <div class="container">
+      <div class="section-header centered">
+        <div>
+          <p class="section-label">Đánh Giá</p>
+          <h2 class="section-title">Khách Hàng Nói Gì</h2>
+        </div>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p>"Đôi Rosé Stiletto đẹp hơn tôi tưởng. Chất da mềm, đi cả ngày không đau chân. Sẽ quay lại mua tiếp!"</p>
+          <div class="testi-author">
+            <div class="testi-avatar">LH</div>
+            <div>
+              <strong>Lan Hương</strong>
+              <span>Khách hàng thân thiết</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card testi-card--featured">
+          <div class="testi-stars">★★★★★</div>
+          <p>"AURA SHOES thực sự xứng với tên gọi. Mỗi đôi giày tôi mua đều khiến tôi cảm thấy tự tin hơn và nhận được nhiều lời khen."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">MT</div>
+            <div>
+              <strong>Minh Thư</strong>
+              <span>Fashion Blogger</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p>"Giao hàng nhanh, đóng gói sang trọng, giày y như hình. Đây là thương hiệu giày tôi tin tưởng nhất hiện nay."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">PN</div>
+            <div>
+              <strong>Phương Nhi</strong>
+              <span>Khách hàng mới</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEWSLETTER ===== -->
+  <section class="newsletter section">
+    <div class="newsletter__inner">
+      <div class="nl__text">
+        <p class="section-label" style="color:rgba(255,255,255,.6)">Bản Tin</p>
+        <h2>Nhận ưu đãi độc quyền</h2>
+        <p>Đăng ký để nhận thông tin về sản phẩm mới, ưu đãi đặc biệt và xu hướng thời trang sớm nhất.</p>
+      </div>
+      <form class="nl__form" id="nlForm">
+        <div class="nl__input-wrap">
+          <input type="email" placeholder="Email của bạn" id="nlEmail" required />
+          <button type="submit" id="nlSubmit">Đăng Ký</button>
+        </div>
+        <p class="nl__note">Không spam. Hủy đăng ký bất cứ lúc nào.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <a href="#" class="navbar__logo footer-logo">
+          <span class="logo-aura">AURA</span><span class="logo-shoes">SHOES</span>
+        </a>
+        <p>Mang đến sự sang trọng và thoải mái cho phụ nữ Việt Nam qua những thiết kế giày tinh tế nhất.</p>
+        <div class="footer__socials">
+          <a href="#" aria-label="Facebook" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" class="social-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="TikTok" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.12a8.16 8.16 0 004.77 1.52V7.21a4.85 4.85 0 01-1-.52z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer__col">
+        <h4>Hỗ Trợ Khách Hàng</h4>
+        <ul>
+          <li><a href="#">Hướng dẫn chọn size</a></li>
+          <li><a href="#">Chính sách đổi trả</a></li>
+          <li><a href="#">Chính sách vận chuyển</a></li>
+          <li><a href="#">Câu hỏi thường gặp</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Liên Hệ</h4>
+        <ul class="contact-list">
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            123 Đường Lê Lợi, Q.1, TP.HCM
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.63a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.69a16 16 0 006.29 6.29l1.21-1.21a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            0123 456 789
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            contact@aurashoes.vn
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© 2024 AURA SHOES. All rights reserved. Design by Aura Creative.</p>
+      <div class="footer__bottom-links">
+        <a href="#">Chính sách bảo mật</a>
+        <a href="#">Điều khoản sử dụng</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+    Đã thêm vào giỏ hàng!
+  </div>
+
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navMenu.classList.toggle('open');
+    });
+
+    // Scroll reveal with IntersectionObserver
+    const reveals = document.querySelectorAll('.cat-card, .product-card, .testi-card, .feature-item, .bs__visual');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Add to cart toast
+    function showToast() {
+      const toast = document.getElementById('toast');
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+    document.querySelectorAll('.product-card__quick-add').forEach(btn => {
+      btn.addEventListener('click', () => {
+        showToast();
+        const count = document.querySelector('.cart-count');
+        count.textContent = parseInt(count.textContent) + 1;
+        count.classList.add('bounce');
+        setTimeout(() => count.classList.remove('bounce'), 400);
+      });
+    });
+
+    // Newsletter form
+    document.getElementById('nlForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('nlSubmit');
+      btn.textContent = '✓ Đã đăng ký!';
+      btn.style.background = '#4CAF50';
+      setTimeout(() => {
+        btn.textContent = 'Đăng Ký';
+        btn.style.background = '';
+        document.getElementById('nlEmail').value = '';
+      }, 2500);
+    });
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
